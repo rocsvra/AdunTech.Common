@@ -5,7 +5,19 @@ VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdunTech.Redis", "AdunTech.Redis\AdunTech.Redis.csproj", "{F3C8C509-3692-4328-AB83-2CD2F494A66B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdunTech.Redis.Demo", "AdunTech.Redis.Demo\AdunTech.Redis.Demo.csproj", "{FFBE8FD3-8843-4471-B895-677A8F2FA165}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdunTech.Redis.Demo", "AdunTech.Redis.Demo\AdunTech.Redis.Demo.csproj", "{FFBE8FD3-8843-4471-B895-677A8F2FA165}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Redis", "Redis", "{B307E712-2A20-445A-8330-9EFDBE99D0CB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Excel", "Excel", "{829F75B4-2607-44DC-B6F5-06BD4267CD6E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdunTech.Excel", "AdunTech.Excel\AdunTech.Excel.csproj", "{E1AF7A6A-6867-488E-8E8D-7364137C885D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdunTech.Excel.Demo", "AdunTech.Excel.Demo\AdunTech.Excel.Demo.csproj", "{CDCB26BE-E158-45FB-9423-1C2EDF196590}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{547AEDD8-89FA-4558-B47F-3AC0A2960F92}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdunTech.Extension", "AdunTech.Extension\AdunTech.Extension.csproj", "{9FBC2ECB-E154-4E57-887C-4792DDE2C61E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,12 +33,31 @@ Global
 		{FFBE8FD3-8843-4471-B895-677A8F2FA165}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FFBE8FD3-8843-4471-B895-677A8F2FA165}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FFBE8FD3-8843-4471-B895-677A8F2FA165}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1AF7A6A-6867-488E-8E8D-7364137C885D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1AF7A6A-6867-488E-8E8D-7364137C885D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1AF7A6A-6867-488E-8E8D-7364137C885D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1AF7A6A-6867-488E-8E8D-7364137C885D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDCB26BE-E158-45FB-9423-1C2EDF196590}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDCB26BE-E158-45FB-9423-1C2EDF196590}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDCB26BE-E158-45FB-9423-1C2EDF196590}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDCB26BE-E158-45FB-9423-1C2EDF196590}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FBC2ECB-E154-4E57-887C-4792DDE2C61E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FBC2ECB-E154-4E57-887C-4792DDE2C61E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FBC2ECB-E154-4E57-887C-4792DDE2C61E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FBC2ECB-E154-4E57-887C-4792DDE2C61E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F3C8C509-3692-4328-AB83-2CD2F494A66B} = {B307E712-2A20-445A-8330-9EFDBE99D0CB}
+		{FFBE8FD3-8843-4471-B895-677A8F2FA165} = {B307E712-2A20-445A-8330-9EFDBE99D0CB}
+		{E1AF7A6A-6867-488E-8E8D-7364137C885D} = {829F75B4-2607-44DC-B6F5-06BD4267CD6E}
+		{CDCB26BE-E158-45FB-9423-1C2EDF196590} = {829F75B4-2607-44DC-B6F5-06BD4267CD6E}
+		{9FBC2ECB-E154-4E57-887C-4792DDE2C61E} = {547AEDD8-89FA-4558-B47F-3AC0A2960F92}
+	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		VisualSVNWorkingCopyRoot = .
 		SolutionGuid = {4843ED9E-C831-403A-80C9-5356FE36B623}
+		VisualSVNWorkingCopyRoot = .
 	EndGlobalSection
 EndGlobal
