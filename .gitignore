@@ -15,3 +15,6 @@
 /AdunTech.Excel.Demo/obj
 /AdunTech.Extension/bin/Debug/netstandard2.0
 /AdunTech.Extension/obj
+/AdunTech.Excel/bin/Release/netstandard2.0
+/AdunTech.Excel/Properties/PublishProfiles/FolderProfile.pubxml.user
+/AdunTech.Excel/AdunTech.Excel.csproj.user
