@@ -25,3 +25,5 @@
 /AdunTech.Cryptography.Tests/bin/Debug/netcoreapp3.1
 /AdunTech.Cryptography.Tests/obj
 /AdunTech.Cryptography.Tests/bin/Debug/net5.0
+/AdunTech.Cryptography/Properties/PublishProfiles
+/AdunTech.Cryptography/AdunTech.Cryptography.csproj.user
