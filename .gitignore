@@ -18,3 +18,10 @@
 /AdunTech.Excel/bin/Release/netstandard2.0
 /AdunTech.Excel/Properties/PublishProfiles/FolderProfile.pubxml.user
 /AdunTech.Excel/AdunTech.Excel.csproj.user
+/AdunTech.Extension.Tests/bin/Debug/netcoreapp3.1
+/AdunTech.Extension.Tests/obj
+/AdunTech.Cryptography/bin/Debug/netstandard2.0
+/AdunTech.Cryptography/obj
+/AdunTech.Cryptography.Tests/bin/Debug/netcoreapp3.1
+/AdunTech.Cryptography.Tests/obj
+/AdunTech.Cryptography.Tests/bin/Debug/net5.0
