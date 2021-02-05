@@ -27,3 +27,9 @@
 /AdunTech.Cryptography.Tests/bin/Debug/net5.0
 /AdunTech.Cryptography/Properties/PublishProfiles
 /AdunTech.Cryptography/AdunTech.Cryptography.csproj.user
+/AdunTech.Cryptography/bin/Release/netstandard2.0
+/AdunTech.Co2Net/bin/Debug/netstandard2.0
+/AdunTech.Co2Net/obj
+/AdunTech.Co2Net.Tests/bin/Debug/netcoreapp3.1
+/AdunTech.Co2Net.Tests/obj
+/AdunTech.Extension.Tests/bin/Debug/net5.0
