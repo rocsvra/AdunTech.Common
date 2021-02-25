@@ -19,17 +19,21 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{547AED
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdunTech.Extension", "AdunTech.Extension\AdunTech.Extension.csproj", "{9FBC2ECB-E154-4E57-887C-4792DDE2C61E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdunTech.Extension.Tests", "AdunTech.Extension.Tests\AdunTech.Extension.Tests.csproj", "{55632E69-2D90-40F6-A11E-143CEC89E78E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdunTech.Extension.Tests", "AdunTech.Extension.Tests\AdunTech.Extension.Tests.csproj", "{55632E69-2D90-40F6-A11E-143CEC89E78E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdunTech.Cryptography", "AdunTech.Cryptography\AdunTech.Cryptography.csproj", "{F23BB6A8-F496-486E-AF0A-E803EFC68687}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdunTech.Cryptography", "AdunTech.Cryptography\AdunTech.Cryptography.csproj", "{F23BB6A8-F496-486E-AF0A-E803EFC68687}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdunTech.Cryptography.Tests", "AdunTech.Cryptography.Tests\AdunTech.Cryptography.Tests.csproj", "{F5E1168F-EDD8-4EF1-979A-C9667C6D0AEF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdunTech.Cryptography.Tests", "AdunTech.Cryptography.Tests\AdunTech.Cryptography.Tests.csproj", "{F5E1168F-EDD8-4EF1-979A-C9667C6D0AEF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{69B8DABE-2380-46AC-A800-72D546CB994B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdunTech.Co2Net", "AdunTech.Co2Net\AdunTech.Co2Net.csproj", "{74AFB092-35EF-46BD-B642-069B0FAB0000}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdunTech.Co2Net", "AdunTech.Co2Net\AdunTech.Co2Net.csproj", "{74AFB092-35EF-46BD-B642-069B0FAB0000}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdunTech.Co2Net.Tests", "AdunTech.Co2Net.Tests\AdunTech.Co2Net.Tests.csproj", "{BFE572A1-E1D2-426D-803C-2F4F5D5D78A6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdunTech.Co2Net.Tests", "AdunTech.Co2Net.Tests\AdunTech.Co2Net.Tests.csproj", "{BFE572A1-E1D2-426D-803C-2F4F5D5D78A6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EF", "EF", "{0BE380CC-34DB-4B8A-9F53-8027878FF8CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdunTech.EFCoreRepository", "AdunTech.EFCoreRepository\AdunTech.EFCoreRepository.csproj", "{DD6E4697-79E3-4AC1-8B8E-762D9603D8ED}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -77,6 +81,10 @@ Global
 		{BFE572A1-E1D2-426D-803C-2F4F5D5D78A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BFE572A1-E1D2-426D-803C-2F4F5D5D78A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BFE572A1-E1D2-426D-803C-2F4F5D5D78A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD6E4697-79E3-4AC1-8B8E-762D9603D8ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD6E4697-79E3-4AC1-8B8E-762D9603D8ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD6E4697-79E3-4AC1-8B8E-762D9603D8ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD6E4697-79E3-4AC1-8B8E-762D9603D8ED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -95,7 +103,7 @@ Global
 		{BFE572A1-E1D2-426D-803C-2F4F5D5D78A6} = {69B8DABE-2380-46AC-A800-72D546CB994B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		VisualSVNWorkingCopyRoot = .
 		SolutionGuid = {4843ED9E-C831-403A-80C9-5356FE36B623}
+		VisualSVNWorkingCopyRoot = .
 	EndGlobalSection
 EndGlobal
