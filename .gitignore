@@ -37,3 +37,11 @@
 /AdunTech.EFCoreRepository/obj
 /AdunTech.EFCoreRepository/bin/Debug/netstandard2.1
 /AdunTech.EFCoreRepository/AdunTech.EFCoreRepository.csproj.user
+/AdunTech.EFCoreRepository/bin/Release/netstandard2.1
+/AdunTech.EFCoreRepository/Properties/PublishProfiles
+/AdunTech.HttpException/obj
+/AdunTech.HttpException.Demo/obj
+/AdunTech.HttpException.Demo/bin/Debug/net5.0
+/AdunTech.HttpException/bin/Debug/netstandard2.0
+/AdunTech.ExceptionDetail/obj
+/AdunTech.ExceptionDetail/bin/Debug/net5.0
