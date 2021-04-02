@@ -45,3 +45,6 @@
 /AdunTech.HttpException/bin/Debug/netstandard2.0
 /AdunTech.ExceptionDetail/obj
 /AdunTech.ExceptionDetail/bin/Debug/net5.0
+/AdunTech.ExceptionDetail/bin/Release/net5.0
+/AdunTech.ExceptionDetail/Properties/PublishProfiles
+/AdunTech.ExceptionDetail/AdunTech.ExceptionDetail.csproj.user
