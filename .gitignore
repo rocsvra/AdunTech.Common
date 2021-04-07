@@ -48,3 +48,6 @@
 /AdunTech.ExceptionDetail/bin/Release/net5.0
 /AdunTech.ExceptionDetail/Properties/PublishProfiles
 /AdunTech.ExceptionDetail/AdunTech.ExceptionDetail.csproj.user
+/AdunTech.AutoMapperExtension/obj
+/AdunTech.AutoMapperExtension.Tests/bin/Debug/net5.0
+/AdunTech.AutoMapperExtension.Tests/obj
