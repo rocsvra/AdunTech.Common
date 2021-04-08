@@ -51,3 +51,11 @@
 /AdunTech.AutoMapperExtension/obj
 /AdunTech.AutoMapperExtension.Tests/bin/Debug/net5.0
 /AdunTech.AutoMapperExtension.Tests/obj
+/AdunTech.SapNwRfc/obj
+/AdunTech.SapNwRfc/bin/Debug/netstandard2.0
+/AdunTech.SapNwRfc.Demo/bin/Debug/net5.0
+/AdunTech.SapNwRfc.Demo/obj
+/AdunTech.SapNwRfc.Demo/dev_rfc.log
+/AdunTech.SapNwRfc.Demo/appsettings.json
+/AdunTech.SapNwRfc.Demo/AdunTech.SapNwRfc.Demo.csproj.user
+/AdunTech.SapNwRfc/AdunTech.SapNwRfc.csproj.user
