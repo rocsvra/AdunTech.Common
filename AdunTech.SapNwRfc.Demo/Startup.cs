@@ -40,10 +40,10 @@ namespace AdunTech.SapNwRfc.Demo
                      options.SerializerSettings.DateFormatString = "yyyy-MM-dd HH:mm:ss";
                      options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
                      //options.SerializerSettings.NullValueHandling = NullValueHandling.Ignore;
-                 }); ;
+                 }); 
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "AdunTech.SapNwRfc.Demo", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "AdunTech.SapNwRfc.Demo", Version = "v1" });            
             });
         }
 
