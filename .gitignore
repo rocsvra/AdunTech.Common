@@ -59,3 +59,7 @@
 /AdunTech.SapNwRfc.Demo/appsettings.json
 /AdunTech.SapNwRfc.Demo/AdunTech.SapNwRfc.Demo.csproj.user
 /AdunTech.SapNwRfc/AdunTech.SapNwRfc.csproj.user
+/AdunTech.CommonDomain/obj
+/AdunTech.CommonInfra/obj
+/AdunTech.CommonDomain/bin
+/AdunTech.CommonInfra/bin/Debug/netstandard2.1

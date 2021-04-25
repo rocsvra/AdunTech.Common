@@ -51,7 +51,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SAP", "SAP", "{70127CE6-A56
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdunTech.SapNwRfc", "AdunTech.SapNwRfc\AdunTech.SapNwRfc.csproj", "{F0585ACC-C066-4E16-948A-7A9D2209873B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdunTech.SapNwRfc.Demo", "AdunTech.SapNwRfc.Demo\AdunTech.SapNwRfc.Demo.csproj", "{9B31B547-E112-4094-B1B0-A27A963E20B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdunTech.SapNwRfc.Demo", "AdunTech.SapNwRfc.Demo\AdunTech.SapNwRfc.Demo.csproj", "{9B31B547-E112-4094-B1B0-A27A963E20B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdunTech.CommonDomain", "AdunTech.CommonDomain\AdunTech.CommonDomain.csproj", "{1EBFC01A-5589-4620-B706-9D3FC4B76F75}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdunTech.CommonInfra", "AdunTech.CommonInfra\AdunTech.CommonInfra.csproj", "{3DBCC8A7-78FD-4B56-AC22-5CE83A95221A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -127,6 +131,14 @@ Global
 		{9B31B547-E112-4094-B1B0-A27A963E20B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9B31B547-E112-4094-B1B0-A27A963E20B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9B31B547-E112-4094-B1B0-A27A963E20B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1EBFC01A-5589-4620-B706-9D3FC4B76F75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EBFC01A-5589-4620-B706-9D3FC4B76F75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EBFC01A-5589-4620-B706-9D3FC4B76F75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EBFC01A-5589-4620-B706-9D3FC4B76F75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DBCC8A7-78FD-4B56-AC22-5CE83A95221A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DBCC8A7-78FD-4B56-AC22-5CE83A95221A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DBCC8A7-78FD-4B56-AC22-5CE83A95221A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DBCC8A7-78FD-4B56-AC22-5CE83A95221A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -150,9 +162,11 @@ Global
 		{EA096618-C07D-414D-B66C-EC9954F1D063} = {66E06CA9-DF78-4802-AE0A-5DB9E75C052F}
 		{F0585ACC-C066-4E16-948A-7A9D2209873B} = {70127CE6-A568-4164-BDAA-4CB224C08B10}
 		{9B31B547-E112-4094-B1B0-A27A963E20B8} = {70127CE6-A568-4164-BDAA-4CB224C08B10}
+		{1EBFC01A-5589-4620-B706-9D3FC4B76F75} = {0BE380CC-34DB-4B8A-9F53-8027878FF8CA}
+		{3DBCC8A7-78FD-4B56-AC22-5CE83A95221A} = {0BE380CC-34DB-4B8A-9F53-8027878FF8CA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		VisualSVNWorkingCopyRoot = .
 		SolutionGuid = {4843ED9E-C831-403A-80C9-5356FE36B623}
+		VisualSVNWorkingCopyRoot = .
 	EndGlobalSection
 EndGlobal
