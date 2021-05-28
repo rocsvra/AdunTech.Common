@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configuration\SapDestinationConfiguration.cs" />
+    <Compile Include="ISapRfcService.cs" />
     <Compile Include="SapRfcService.cs" />
     <Compile Include="Configuration\SapConnectionOptions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

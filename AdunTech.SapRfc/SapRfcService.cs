@@ -5,7 +5,7 @@ using System.Reflection;
 
 namespace AdunTech.SapRfc
 {
-    public class SapRfcService
+    public class SapRfcService : ISapRfcService
     {
         private readonly RfcDestination destination;
 
@@ -36,10 +36,8 @@ namespace AdunTech.SapRfc
         /// <param name="rfcFunctionName">rfc方法名</param>
         /// <returns></returns>
         public IEnumerable<TOutput> Query<TOutput, TInput>(TInput intput, string rfcFunctionName)
-            where TInput : new()
-            where TOutput : new()
         {
-            IRfcFunction rfcFunc = InvokeRfc(intput, rfcFunctionName);
+            IRfcFunction rfcFunc = InvokeRfc4Query(intput, rfcFunctionName);
             return rfcFunc.Query<TOutput>();
         }
 
@@ -50,7 +48,7 @@ namespace AdunTech.SapRfc
         /// <param name="intput"></param>
         /// <param name="rfcFunctionName"></param>
         /// <returns></returns>
-        public IRfcFunction InvokeRfc<TInput>(TInput intput, string rfcFunctionName)
+        public IRfcFunction InvokeRfc4Query<TInput>(TInput intput, string rfcFunctionName)
         {
             var rfcFunc = destination.Repository.CreateFunction(rfcFunctionName);
             foreach (PropertyInfo pi in typeof(TInput).GetProperties())
@@ -70,23 +68,77 @@ namespace AdunTech.SapRfc
         /// <summary>
         ///  Sap数据回写
         /// </summary>
-        /// <typeparam name="TInput">回写参数类型</typeparam>
-        /// <typeparam name="TOutput">响应参数类型</typeparam>
-        /// <param name="input">回写参数</param>
+        /// <typeparam name="TInput"></typeparam>
+        /// <typeparam name="TOutput"></typeparam>
+        /// <param name="input">回写实体</param>
         /// <param name="rfcFunctionName">回写函数名</param>
-        /// <param name="innerTableName">回写内表名</param>
-        /// <param name="outputTableName">返回信息表名</param>
-        public IEnumerable<TOutput> ExecuteNonQuery<TOutput, TInput>(TInput input, string rfcFunctionName, string innerTableName, string outputTableName)
+        public IEnumerable<TOutput> ExecuteNonQuery<TOutput, TInput>(TInput input, string rfcFunctionName)
         {
+            string outputTableName = typeof(TOutput).Name;
+            var rfcFunc = InvokeRfc4NonQuery(input, rfcFunctionName);
+            return rfcFunc.GetTable(outputTableName).Query<TOutput>();
+        }
+
+        public void ExecuteNonQuery<TInput>(TInput input, string rfcFunctionName)
+        {
+            InvokeRfc4NonQuery(input, rfcFunctionName);
+        }
+
+        public void ExecuteNonQuery<TInput>(IEnumerable<TInput> inputs, string rfcFunctionName)
+        {
+            InvokeRfc4NonQuery(inputs, rfcFunctionName);
+        }
+
+        /// <summary>
+        /// Sap数据回写(批量)
+        /// </summary>
+        /// <typeparam name="TOutput"></typeparam>
+        /// <typeparam name="TInput"></typeparam>
+        /// <param name="inputs">回写实体</param>
+        /// <param name="rfcFunctionName"></param>
+        /// <returns></returns>
+        public IEnumerable<TOutput> ExecuteNonQuery<TOutput, TInput>(IEnumerable<TInput> inputs, string rfcFunctionName)
+        {
+            string outputTableName = typeof(TOutput).Name;
+            var rfcFunc = InvokeRfc4NonQuery(inputs, rfcFunctionName);
+            return rfcFunc.GetTable(outputTableName).Query<TOutput>();
+        }
+
+        /// <summary>
+        /// 插入单条数据
+        /// </summary>
+        /// <typeparam name="TInput"></typeparam>
+        /// <param name="input"></param>
+        /// <param name="rfcFunctionName"></param>
+        /// <returns></returns>
+        private IRfcFunction InvokeRfc4NonQuery<TInput>(TInput input, string rfcFunctionName)
+        {
+            IEnumerable<TInput> inputs = new List<TInput> { input };
+            return InvokeRfc4NonQuery(inputs, rfcFunctionName);
+        }
+
+        /// <summary>
+        /// 插入多条数据
+        /// </summary>
+        /// <typeparam name="TInput"></typeparam>
+        /// <param name="inputs"></param>
+        /// <param name="rfcFunctionName"></param>
+        /// <returns></returns>
+        private IRfcFunction InvokeRfc4NonQuery<TInput>(IEnumerable<TInput> inputs, string rfcFunctionName)
+        {
+            var innerTableName = typeof(TInput).Name;
             var rfcFunc = destination.Repository.CreateFunction(rfcFunctionName);
+
             IRfcTable rfcTable = rfcFunc.GetTable(innerTableName);
             rfcTable.Insert();
-
-            foreach (PropertyInfo pi in input.GetType().GetProperties())
+            foreach (var input in inputs)
             {
-                string key = pi.Name;
-                string value = pi.GetValue(input)?.ToString();
-                rfcTable.CurrentRow.SetValue(key, value);
+                foreach (PropertyInfo pi in input.GetType().GetProperties())
+                {
+                    string key = pi.Name;
+                    string value = pi.GetValue(input)?.ToString();
+                    rfcTable.CurrentRow.SetValue(key, value);
+                }
             }
             rfcFunc.Invoke(destination);
 
@@ -94,12 +146,7 @@ namespace AdunTech.SapRfc
             {
                 throw new Exception(rfcFunc.GetValue("MESSAGE").ToString());
             }
-            IRfcTable rfcTbl = rfcFunc.GetTable(outputTableName);
-            if (rfcTbl == null || rfcTbl.Count == 0)
-            {
-                return default(IEnumerable<TOutput>);
-            }
-            return rfcTbl.Query<TOutput>();
+            return rfcFunc;
         }
     }
 }
