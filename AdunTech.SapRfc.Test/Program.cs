@@ -49,10 +49,10 @@ namespace AdunTech.SapRfc.Test
         static void MulQuery()
         {
             var input = new ZHRI043_Input { IM_PERNR = "00228028", IM_MONTH = "202011" };
-            var func = srv.InvokeRfc4Query(input, "ZHRI043");
+            var func = srv.InvokeRfc4Query(input, "ZHRI043"); //执行sap远程函数
             ZHRI043_Output data = new ZHRI043_Output
             {
-                ZHRI043A = func.Query<ZHRI043A>(),
+                ZHRI043A = func.Query<ZHRI043A>(),//获取数据
                 ZHRI043B = func.Query<ZHRI043B>(),
                 ZHRI043E = func.Query<ZHRI043E>(),
             };
@@ -63,7 +63,7 @@ namespace AdunTech.SapRfc.Test
         /// <summary>
         /// 回写
         /// </summary>
-        static void WriteBack()
+        static void WriteBackMul()
         {
             List<ZZT0185> cards = new List<ZZT0185>();
             ZZT0185 idCard1 = new ZZT0185();
@@ -95,22 +95,20 @@ namespace AdunTech.SapRfc.Test
         /// <summary>
         /// 回写
         /// </summary>
-        static void WriteBackMul()
+        static void WriteBack()
         {
-            List<ZZT0185> cards = new List<ZZT0185>();
-            ZZT0185 idCard = new ZZT0185();
-            idCard.BEGDA = DateTime.Now.ToString("yyyyMMdd");
-            idCard.ENDDA = "99991231";
-            idCard.ICNUM = "330281198411104114";
-            idCard.LOCAT = "宁波";
-            idCard.PERNR = "00190330";
-            idCard.USEFR = "20201112";
-            idCard.USETO = "20241010";
-            idCard.ZIDNO = "00190330";
-            cards.Add(idCard);
-
-            IEnumerable<ZHRI044A> data = srv.ExecuteNonQuery<ZHRI044A, ZZT0185>(idCard, "ZHRI044");
-            Console.WriteLine(JsonConvert.SerializeObject(data));
+            ZZT0185 input = new ZZT0185()
+            {                 
+                BEGDA = DateTime.Now.ToString("yyyyMMdd"),
+                ENDDA = "99991231",
+                ICNUM = "330281198411104114",
+                LOCAT = "宁波",
+                PERNR = "00190330",
+                USEFR = "20201112",
+                USETO = "20241010",
+                ZIDNO = "00190330",
+            };
+            srv.ExecuteNonQuery(input, "ZHRI044");
         }
     }
 }

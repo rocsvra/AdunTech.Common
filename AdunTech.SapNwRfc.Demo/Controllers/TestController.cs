@@ -13,7 +13,7 @@ namespace AdunTech.SapNwRfc.Demo.Controllers
         private readonly ILogger<TestController> _logger;
         private readonly ISapRfcClient _sapClient;
 
-        public TestController(ILogger<TestController> logger, ISapRfcClient sapClient, ISapPooledConnection connection, ISapConnectionPool pool)
+        public TestController(ILogger<TestController> logger, ISapRfcClient sapClient)
         {
             _logger = logger;
             _sapClient = sapClient;

@@ -1,4 +1,5 @@
-﻿using SapNwRfc.Pooling;
+﻿using SapNwRfc;
+using SapNwRfc.Pooling;
 
 namespace AdunTech.SapNwRfc
 {
@@ -8,6 +9,8 @@ namespace AdunTech.SapNwRfc
 
         public SapRfcClient(ISapPooledConnection connection)
         {
+            //确认SAP RFC SDK 是否存在,不存在会抛出SapLibraryNotFoundException 
+            SapLibrary.EnsureLibraryPresent(); 
             _connection = connection;
         }
 
