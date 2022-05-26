@@ -1,0 +1,1 @@
+﻿NPocoDb实现了IDisposable接口，在垃圾回收的时候会调用Dispose的方法关闭数据库连接（建议采用services.AddScope注入），也可以手动进行关闭。

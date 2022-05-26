@@ -78,3 +78,13 @@
 /AdunTech.SapRfc/bin/Debug
 /AdunTech.SapRfc.Test/bin/Debug
 /packages/Newtonsoft.Json.13.0.1
+/AdunTech.Npoco2Net/bin
+/AdunTech.Npoco2Net/obj
+/AdunTech.Npoco2Net/Properties/PublishProfiles
+/AdunTech.Npoco2Net/AdunTech.Npoco2Net.csproj.user
+/AdunTech.NPoco2Mysql/obj
+/AdunTech.NPoco2Mysql/bin/Debug/netstandard2.0
+/AdunTech.NPoco2SqlServer/obj
+/AdunTech.NpocoDemo/bin/Debug/net6.0
+/AdunTech.NpocoDemo/obj
+/AdunTech.NpocoDemo/Properties

@@ -1,0 +1,330 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AdunTech.Npoco2Net</name>
+    </assembly>
+    <members>
+        <member name="T:AdunTech.Npoco2Net.NPocoDb">
+            <summary>
+            NonQuery
+            </summary>
+            <summary>
+            Query
+            </summary>
+        </member>
+        <member name="M:AdunTech.Npoco2Net.NPocoDb.ExecuteNonQuery(System.String,System.Object[])">
+            <summary>
+            执行sql
+            </summary>
+            <param name="sql"></param>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AdunTech.Npoco2Net.NPocoDb.ExecuteNonQuery(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            批量执行sql
+            </summary>
+            <param name="sqls"></param>
+        </member>
+        <member name="M:AdunTech.Npoco2Net.NPocoDb.Insert``1(``0)">
+            <summary>
+            插入数据
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="poco"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AdunTech.Npoco2Net.NPocoDb.InsertBatch``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            插入(批量)
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="pocos"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AdunTech.Npoco2Net.NPocoDb.InsertBulk``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            插入(巨量)
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="pocos"></param>
+        </member>
+        <member name="M:AdunTech.Npoco2Net.NPocoDb.Update(System.Object)">
+            <summary>
+            更新数据
+            </summary>
+            <param name="poco"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AdunTech.Npoco2Net.NPocoDb.Delete(System.Object)">
+            <summary>
+            删除
+            </summary>
+            <param name="poco"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AdunTech.Npoco2Net.NPocoDb.Delete``1(System.Object)">
+            <summary>
+            删除
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="pocoOrPrimaryKey">实体或主键</param>
+            <returns></returns>
+        </member>
+        <member name="M:AdunTech.Npoco2Net.NPocoDb.Exist``1(System.Object)">
+            <summary>
+            实体是否存在
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="primaryKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AdunTech.Npoco2Net.NPocoDb.SingleOrDefault``1(System.String,System.Object[])">
+            <summary>
+            查询单条数据
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="sql"></param>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AdunTech.Npoco2Net.NPocoDb.SingleOrDefaultById``1(System.Object)">
+            <summary>
+            查询单条数据
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="primaryKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AdunTech.Npoco2Net.NPocoDb.First``1(System.String,System.Object[])">
+            <summary>
+            查询首条数据
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="sql"></param>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AdunTech.Npoco2Net.NPocoDb.FirstOrDefault``1(System.String,System.Object[])">
+            <summary>
+            查询首条数据
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="sql"></param>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AdunTech.Npoco2Net.NPocoDb.Fetch``1">
+            <summary>
+            数据查询
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:AdunTech.Npoco2Net.NPocoDb.Fetch``1(System.String,System.Object[])">
+            <summary>
+            数据查询
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="sql"></param>        
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AdunTech.Npoco2Net.NPocoDb.Query``1(System.String,System.Object[])">
+            <summary>
+            数据查询
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="sql"></param>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AdunTech.Npoco2Net.NPocoDb.Page``1(System.Int32,System.Int32,System.String,System.Object[])">
+            <summary>
+            获取分页数据
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="pageIndex">第几页（从1开始）</param>
+            <param name="pageSize"></param>
+            <param name="sql"></param>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AdunTech.Npoco2Net.NPocoDb.#ctor(System.String,NPoco.DatabaseType,System.Data.Common.DbProviderFactory)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="connectionString"></param>
+            <param name="databaseType"></param>
+            <param name="provider"></param>
+        </member>
+        <member name="M:AdunTech.Npoco2Net.NPocoDb.BeginTransaction">
+            <summary>
+            开始事务
+            </summary>
+        </member>
+        <member name="M:AdunTech.Npoco2Net.NPocoDb.CompleteTransaction">
+            <summary>
+            结束事务
+            </summary>
+        </member>
+        <member name="M:AdunTech.Npoco2Net.NPocoDb.Dispose">
+            <summary>
+            回收处理
+            </summary>
+        </member>
+        <member name="T:AdunTech.Npoco2Net.IDbNonQuery">
+            <summary>
+            数据库接口（非查询）
+            </summary>
+        </member>
+        <member name="M:AdunTech.Npoco2Net.IDbNonQuery.ExecuteNonQuery(System.String,System.Object[])">
+            <summary>
+            执行sql
+            </summary>
+            <param name="sql"></param>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AdunTech.Npoco2Net.IDbNonQuery.ExecuteNonQuery(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            执行sql(批量)
+            </summary>
+            <param name="sqls"></param>
+        </member>
+        <member name="M:AdunTech.Npoco2Net.IDbNonQuery.Insert``1(``0)">
+            <summary>
+            插入实体
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AdunTech.Npoco2Net.IDbNonQuery.InsertBatch``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            插入(批量)
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="entities"></param>
+        </member>
+        <member name="M:AdunTech.Npoco2Net.IDbNonQuery.InsertBulk``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            插入(巨量)
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="entities"></param>
+        </member>
+        <member name="M:AdunTech.Npoco2Net.IDbNonQuery.Update(System.Object)">
+            <summary>
+            更新实体
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AdunTech.Npoco2Net.IDbNonQuery.Delete(System.Object)">
+            <summary>
+            删除实体
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AdunTech.Npoco2Net.IDbNonQuery.Delete``1(System.Object)">
+            <summary>
+            删除实体
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="id">主键</param>
+            <returns></returns>
+        </member>
+        <member name="T:AdunTech.Npoco2Net.IDbQuery">
+            <summary>
+            数据库接口（查询）
+            </summary>
+        </member>
+        <member name="M:AdunTech.Npoco2Net.IDbQuery.Exist``1(System.Object)">
+            <summary>
+            实体是否存在
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AdunTech.Npoco2Net.IDbQuery.SingleOrDefault``1(System.String,System.Object[])">
+            <summary>
+            查询单条数据
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="sql"></param>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AdunTech.Npoco2Net.IDbQuery.SingleOrDefaultById``1(System.Object)">
+            <summary>
+            查询单条数据
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="id">主键</param>
+            <returns></returns>
+        </member>
+        <member name="M:AdunTech.Npoco2Net.IDbQuery.First``1(System.String,System.Object[])">
+            <summary>
+            查询首条数据
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="sql"></param>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AdunTech.Npoco2Net.IDbQuery.FirstOrDefault``1(System.String,System.Object[])">
+            <summary>
+            查询首条数据
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="sql"></param>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AdunTech.Npoco2Net.IDbQuery.Fetch``1">
+            <summary>
+            数据查询
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:AdunTech.Npoco2Net.IDbQuery.Query``1(System.String,System.Object[])">
+            <summary>
+            数据查询
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="sql"></param>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AdunTech.Npoco2Net.IDbQuery.Page``1(System.Int32,System.Int32,System.String,System.Object[])">
+            <summary>
+            获取分页数据
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="pageIndex">从1开始</param>
+            <param name="pageSize"></param>
+            <param name="sql"></param>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="T:AdunTech.Npoco2Net.INPocoDb">
+            <summary>
+            数据库操作类
+            </summary>
+        </member>
+        <member name="M:AdunTech.Npoco2Net.INPocoDb.BeginTransaction">
+            <summary>
+            开始事务
+            </summary>
+        </member>
+        <member name="M:AdunTech.Npoco2Net.INPocoDb.CompleteTransaction">
+            <summary>
+            结束事务
+            </summary>
+        </member>
+    </members>
+</doc>

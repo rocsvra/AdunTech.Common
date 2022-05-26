@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AdunTech.NPoco2Mysql</name>
+    </assembly>
+    <members>
+        <member name="T:AdunTech.NPoco2Mysql.IMySqlDb">
+            <summary>
+            MySql数据库操作
+            </summary>
+        </member>
+        <member name="M:AdunTech.NPoco2Mysql.IMySqlDb.ExecProcedure(System.String,MySql.Data.MySqlClient.MySqlParameter[])">
+            <summary>
+            执行存储过程
+            </summary>
+            <param name="procName"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="T:AdunTech.NPoco2Mysql.MySqlDb">
+            <summary>
+            mysql 操作类
+            </summary>
+        </member>
+        <member name="M:AdunTech.NPoco2Mysql.MySqlDb.#ctor(System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="connectionString"></param>
+        </member>
+        <member name="M:AdunTech.NPoco2Mysql.MySqlDb.ExecProcedure(System.String,MySql.Data.MySqlClient.MySqlParameter[])">
+            <summary>
+            执行存储过程
+            </summary>
+            <param name="procName"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
