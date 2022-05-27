@@ -1,3 +1,4 @@
+using AdunTech.NPoco2Mysql;
 using AdunTech.NPoco2SqlServer;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,6 +13,12 @@ builder.Services.AddScoped<ISqlServerDb, SqlServerDb>(o =>
 {
     var connectionString = builder.Configuration.GetConnectionString("SqlServerTestDB");
     return new SqlServerDb(connectionString);
+});
+
+builder.Services.AddScoped<IMySqlDb, MySqlDb>(o =>
+{
+    var connectionString = builder.Configuration.GetConnectionString("MySqlTestDB");
+    return new MySqlDb(connectionString);
 });
 
 var app = builder.Build();

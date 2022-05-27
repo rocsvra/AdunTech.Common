@@ -1,17 +1,17 @@
-using AdunTech.NPoco2SqlServer;
+﻿using AdunTech.NPoco2Mysql;
 using AdunTech.NpocoDemo.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AdunTech.NpocoDemo.Controllers
 {
+    [Route("api/[controller]")]
     [ApiController]
-    [Route("[controller]")]
-    public class SqlServerTestController : ControllerBase
+    public class MysqlTestController : ControllerBase
     {
-        private readonly ILogger<SqlServerTestController> _logger;
-        private readonly ISqlServerDb _db;
+        private readonly ILogger<MysqlTestController> _logger;
+        private readonly IMySqlDb _db;
 
-        public SqlServerTestController(ILogger<SqlServerTestController> logger, ISqlServerDb db)
+        public MysqlTestController(ILogger<MysqlTestController> logger, IMySqlDb db)
         {
             _logger = logger;
             _db = db;
@@ -42,7 +42,6 @@ namespace AdunTech.NpocoDemo.Controllers
                 Id = Guid.NewGuid().ToString(),
                 A = Guid.NewGuid().ToString(),
             });
-            //throw new Exception();
             _db.Insert(new TestA
             {
                 Id = Guid.NewGuid().ToString(),

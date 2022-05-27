@@ -11,7 +11,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\AdunTech.NPoco2Mysql\AdunTech.NPoco2Mysql.csproj" />
     <ProjectReference Include="..\AdunTech.NPoco2SqlServer\AdunTech.NPoco2SqlServer.csproj" />
   </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
 
 </Project>
