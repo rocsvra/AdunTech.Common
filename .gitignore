@@ -98,3 +98,7 @@
 /AdunTech.AutoMapperExtension/bin
 /AdunTech.FSS/bin/Debug/netstandard2.0
 /AdunTech.FSS/obj
+/AdunTech.FSS.Test/obj
+/AdunTech.FSS.Test/appsettings.json
+/AdunTech.FSS.Test/appsettings.Development.json
+/AdunTech.FSS.Test/bin/Debug/net6.0
