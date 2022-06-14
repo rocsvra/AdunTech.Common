@@ -90,3 +90,7 @@
 /AdunTech.NpocoDemo/Properties
 /AdunTech.NPoco2SqlServer/bin/Debug/netstandard2.0
 /AdunTech.NpocoDemo/appsettings.json
+/AdunTech.Web/obj
+/AdunTech.Json/bin/Debug/netstandard2.0
+/AdunTech.Json/obj
+/AdunTech.ExceptionDetail/bin/Debug/net6.0
