@@ -94,3 +94,7 @@
 /AdunTech.Json/bin/Debug/netstandard2.0
 /AdunTech.Json/obj
 /AdunTech.ExceptionDetail/bin/Debug/net6.0
+/AdunTech.AutoMapperExtension.Tests/bin/Debug/net6.0
+/AdunTech.AutoMapperExtension/bin
+/AdunTech.FSS/bin/Debug/netstandard2.0
+/AdunTech.FSS/obj
