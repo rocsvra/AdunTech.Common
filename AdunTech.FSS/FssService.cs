@@ -29,7 +29,7 @@ namespace AdunTech.FSS
         /// <summary>
         /// 构造函数
         /// </summary>
-        /// <param name="port">文件服务器地址</param>        
+        /// <param name="port">文件服务器地址</param>
         /// <param name="endPoint">终端，exp：172.16.2.27</param>
         /// <param name="port">端口：exp：22122</paramFssOptions
         public FssService(string endPoint, int port, string groupName)
@@ -50,10 +50,10 @@ namespace AdunTech.FSS
         /// <summary>
         /// 下载文件
         /// </summary>
-        /// <param name="fileId">文件id</param>
-        public byte[] DownloadFile(string fileId)
+        /// <param name="fileName">文件id</param>
+        public byte[] DownloadFile(string fileName)
         {
-            return _fssClient.DownloadFile(_storageNode, fileId);
+            return _fssClient.DownloadFile(_storageNode, fileName);
         }
 
         /// <summary>
@@ -61,7 +61,7 @@ namespace AdunTech.FSS
         /// </summary>
         /// <param name="fileStream">文件流</param>
         /// <param name="fileExt">后缀名</param>
-        /// <returns>返回文件存储相对路径</returns>
+        /// <returns>返回文件id</returns>
         public string UploadFile(Stream fileStream, string fileExt)
         {
             byte[] buffer = new byte[fileStream.Length];
@@ -74,10 +74,19 @@ namespace AdunTech.FSS
         /// </summary>
         /// <param name="fileByte">文件byte[]</param>
         /// <param name="fileExt">后缀名</param>
-        /// <returns>返回文件存储相对路径</returns>
+        /// <returns>返回文件id</returns>
         public string UploadFile(byte[] fileByte, string fileExt)
         {
             return _fssClient.UploadFile(_storageNode, fileByte, fileExt);
+        }
+
+        /// <summary>
+        /// 移除文件
+        /// </summary>
+        /// <param name="fileName">文件名</param>
+        public void RemoveFile(string fileName)
+        {
+            _fssClient.RemoveFile(_options.GroupName, fileName);
         }
     }
 }

@@ -7,7 +7,6 @@ namespace AdunTech.FSS.Test.Controllers
     [Route("[controller]")]
     public class TestController : ControllerBase
     {
-
         private readonly IFssService _fssService;
         private readonly ILogger<TestController> _logger;
 
@@ -29,7 +28,7 @@ namespace AdunTech.FSS.Test.Controllers
             }
         }
 
-        [HttpPost]
+        [HttpPost("Upload")]
         [DisableRequestSizeLimit]
         public ActionResult<List<string>> Post(IFormFileCollection files)
         {
@@ -54,13 +53,21 @@ namespace AdunTech.FSS.Test.Controllers
             return fileUrls;
         }
 
-        [HttpGet("Download/{id}")]
-        public ActionResult Get(string id)
+        [HttpGet("Download/{fileName}")]
+        public ActionResult Get(string fileName)
         {
-            id = HttpUtility.UrlDecode(id);
-            byte[] response = _fssService.DownloadFile(id);
+            fileName = HttpUtility.UrlDecode(fileName);
+            byte[] response = _fssService.DownloadFile(fileName);
             MemoryStream stream = new MemoryStream(response, true);
-            return File(stream, "application/octet-stream", id);
+            return File(stream, "application/octet-stream", fileName);
+        }
+
+        [HttpGet("Remove/{fileName}")]
+        public ActionResult Remove(string fileName)
+        {
+            fileName = HttpUtility.UrlDecode(fileName);
+            _fssService.RemoveFile(fileName);
+            return Ok();
         }
     }
 }

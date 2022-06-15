@@ -7,9 +7,9 @@ namespace AdunTech.FSS
         /// <summary>
         /// 下载文件
         /// </summary>
-        /// <param name="path"></param>
+        /// <param name="fileName">文件名</param>
         /// <returns></returns>
-        byte[] DownloadFile(string path);
+        byte[] DownloadFile(string fileName);
 
         /// <summary>
         /// 上传文件
@@ -26,5 +26,11 @@ namespace AdunTech.FSS
         /// <param name="fileExt">后缀名</param>
         /// <returns>返回文件存储相对路径</returns>
         string UploadFile(byte[] fileByte, string fileExt);
+
+        /// <summary>
+        /// 移除文件
+        /// </summary>
+        /// <param name="fileName">文件名</param>
+        void RemoveFile(string fileName);
     }
 }
