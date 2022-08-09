@@ -32,5 +32,12 @@ namespace AdunTech.FSS
         /// </summary>
         /// <param name="fileName">文件名</param>
         void RemoveFile(string fileName);
+
+        /// <summary>
+        /// 获取文件信息
+        /// </summary>
+        /// <param name="fileName"></param>
+        /// <returns></returns>
+        FssInfo GetFssInfo(string fileName);
     }
 }

@@ -102,3 +102,6 @@
 /AdunTech.FSS.Test/appsettings.json
 /AdunTech.FSS.Test/appsettings.Development.json
 /AdunTech.FSS.Test/bin/Debug/net6.0
+/AdunTech.FSS/bin/Release/netstandard2.0
+/AdunTech.FSS/Properties/PublishProfiles
+/AdunTech.FSS/AdunTech.FSS.csproj.user

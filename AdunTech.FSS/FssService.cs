@@ -88,5 +88,20 @@ namespace AdunTech.FSS
         {
             _fssClient.RemoveFile(_options.GroupName, fileName);
         }
+
+        /// <summary>
+        /// 获取文件信息
+        /// </summary>
+        /// <param name="fileName"></param>
+        /// <returns></returns>
+        public FssInfo GetFssInfo(string fileName)
+        {
+            var info = _fssClient.GetFileInfo(_storageNode, fileName);
+            return new FssInfo
+            {
+                FileSize = info.FileSize,
+                CreateTime = info.CreateTime
+            };
+        }
     }
 }
