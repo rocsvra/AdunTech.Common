@@ -3,7 +3,6 @@ using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading;
@@ -14,16 +13,16 @@ namespace AdunTech.CommonInfra
     public interface IEfDbContext
     {
         DbSet<TEntity> Set<TEntity>() where TEntity : class;
-        EntityEntry<TEntity> Entry<TEntity>([NotNull] TEntity entity) where TEntity : class;
-        EntityEntry<TEntity> Add<TEntity>([NotNull] TEntity entity) where TEntity : class;
-        void AddRange([NotNull] IEnumerable<object> entities);
-        EntityEntry<TEntity> Attach<TEntity>([NotNull] TEntity entity) where TEntity : class;
-        void AttachRange([NotNull] IEnumerable<object> entities);
-        EntityEntry<TEntity> Update<TEntity>([NotNull] TEntity entity) where TEntity : class;
-        void UpdateRange([NotNull] IEnumerable<object> entities);
-        IQueryable<TResult> FromExpression<TResult>([NotNull] Expression<Func<IQueryable<TResult>>> expression);
-        EntityEntry<TEntity> Remove<TEntity>([NotNull] TEntity entity) where TEntity : class;
-        void RemoveRange([NotNull] IEnumerable<object> entities);
+        EntityEntry<TEntity> Entry<TEntity>(TEntity entity) where TEntity : class;
+        EntityEntry<TEntity> Add<TEntity>(TEntity entity) where TEntity : class;
+        void AddRange(IEnumerable<object> entities);
+        EntityEntry<TEntity> Attach<TEntity>(TEntity entity) where TEntity : class;
+        void AttachRange(IEnumerable<object> entities);
+        EntityEntry<TEntity> Update<TEntity>(TEntity entity) where TEntity : class;
+        void UpdateRange(IEnumerable<object> entities);
+        IQueryable<TResult> FromExpression<TResult>(Expression<Func<IQueryable<TResult>>> expression);
+        EntityEntry<TEntity> Remove<TEntity>(TEntity entity) where TEntity : class;
+        void RemoveRange(IEnumerable<object> entities);
         ChangeTracker ChangeTracker { get; }
         DatabaseFacade Database { get; }
         int SaveChanges(bool acceptAllChangesOnSuccess);
