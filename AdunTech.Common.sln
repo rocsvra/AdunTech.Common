@@ -83,6 +83,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OCR", "OCR", "{EF15E5C2-D59
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdunTech.IdcardOcr", "AdunTech.IdcardOcr\AdunTech.IdcardOcr.csproj", "{9A4CA135-FBF1-49F4-B980-149250698A5E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdunTech.IdcardOcr.Demo", "AdunTech.IdcardOcr.Demo\AdunTech.IdcardOcr.Demo.csproj", "{59DAE2D1-67D6-43E0-9E4D-AEC1A9273AFF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -201,6 +203,10 @@ Global
 		{9A4CA135-FBF1-49F4-B980-149250698A5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9A4CA135-FBF1-49F4-B980-149250698A5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9A4CA135-FBF1-49F4-B980-149250698A5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59DAE2D1-67D6-43E0-9E4D-AEC1A9273AFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59DAE2D1-67D6-43E0-9E4D-AEC1A9273AFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59DAE2D1-67D6-43E0-9E4D-AEC1A9273AFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59DAE2D1-67D6-43E0-9E4D-AEC1A9273AFF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -236,6 +242,7 @@ Global
 		{1D5E4919-6C33-4FFF-A58D-25D047EC71A1} = {8827D454-7536-492B-AEC8-E9F37D2B0912}
 		{2AAE0A2B-F421-4106-A8F0-38316E38E194} = {8827D454-7536-492B-AEC8-E9F37D2B0912}
 		{9A4CA135-FBF1-49F4-B980-149250698A5E} = {EF15E5C2-D593-41C6-84B2-54252556473D}
+		{59DAE2D1-67D6-43E0-9E4D-AEC1A9273AFF} = {EF15E5C2-D593-41C6-84B2-54252556473D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		VisualSVNWorkingCopyRoot = .

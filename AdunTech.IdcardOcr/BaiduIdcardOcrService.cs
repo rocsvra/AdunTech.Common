@@ -1,6 +1,7 @@
 ﻿using Baidu.Aip.Ocr;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Net;
@@ -68,11 +69,7 @@ namespace AdunTech.IdcardOcr
         public BackSide GetBackInfo(byte[] image)
         {
             var ocrResult = _ocrClient.Idcard(image, "back");
-            string imageStatus = ocrResult["image_status"].ToString();
-            if (imageStatus != Enum.GetName(typeof(ImageStatus), ImageStatus.normal))
-            {
-                throw new IdcardOcrException(imageStatus);
-            }
+            HandleException(ocrResult);
             return new BackSide
             {
                 StartDate = ocrResult["words_result"]["签发日期"]["words"].ToString(),
@@ -88,11 +85,7 @@ namespace AdunTech.IdcardOcr
         public FrontSide GetFrontInfo(byte[] image)
         {
             var ocrResult = _ocrClient.Idcard(image, "front");
-            string imageStatus = ocrResult["image_status"].ToString();
-            if (imageStatus != Enum.GetName(typeof(ImageStatus), ImageStatus.normal))
-            {
-                throw new IdcardOcrException(imageStatus);
-            }
+            HandleException(ocrResult);
             return new FrontSide
             {
                 Address = ocrResult["words_result"]["住址"]["words"].ToString(),
@@ -102,6 +95,24 @@ namespace AdunTech.IdcardOcr
                 Birth = ocrResult["words_result"]["出生"]["words"].ToString(),
                 Nationality = ocrResult["words_result"]["民族"]["words"].ToString()
             };
+        }
+
+        /// <summary>
+        /// 异常处理
+        /// </summary>
+        /// <param name="ocrResult"></param>
+        private void HandleException(JObject ocrResult)
+        {
+            if (ocrResult["error_code"] != null)
+            {
+                string errMsg = string.Format("error_code:{0};error_msg:{1};", ocrResult["error_code"], ocrResult["error_msg"]);
+                throw new Exception(errMsg);
+            }
+            string imageStatus = ocrResult["image_status"].ToString();
+            if (imageStatus != Enum.GetName(typeof(ImageStatus), ImageStatus.normal))
+            {
+                throw new IdcardOcrException(imageStatus);
+            }
         }
     }
 }
