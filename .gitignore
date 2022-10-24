@@ -114,3 +114,6 @@
 /AdunTech.IdcardOcr.Demo/obj
 /AdunTech.IdcardOcr.Demo/appsettings.json
 /AdunTech.IdcardOcr.Demo/appsettings.Development.json
+/AdunTech.IdcardOcr/bin/Release/netstandard2.0
+/AdunTech.IdcardOcr/Properties/PublishProfiles
+/AdunTech.IdcardOcr/AdunTech.IdcardOcr.csproj.user
