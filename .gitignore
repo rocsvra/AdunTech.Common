@@ -106,3 +106,6 @@
 /AdunTech.FSS/Properties/PublishProfiles
 /AdunTech.FSS/AdunTech.FSS.csproj.user
 /AdunTech.CommonInfra/bin
+/BaiduOcr/obj
+/BaiduOcr/bin/Debug/netstandard2.0
+/AdunTech.IdcardOcr/obj
