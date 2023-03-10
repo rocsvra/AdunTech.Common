@@ -10,21 +10,21 @@ namespace AdunTech.CommonDomain
     /// </summary>
     public interface IUnitOfWork
     {
-        void Add<TEntity>([NotNull] TEntity entity)
+        void Add<TEntity>(TEntity entity)
             where TEntity : class, new();
-        void AddRange<TEntity>([NotNull] IEnumerable<TEntity> entities)
+        void AddRange<TEntity>(IEnumerable<TEntity> entities)
             where TEntity : class, new();
-        void Modify<TEntity>([NotNull] TEntity entity)
+        void Modify<TEntity>(TEntity entity)
             where TEntity : class, new();
-        void ModifyRange<TEntity>([NotNull] IEnumerable<TEntity> entities)
+        void ModifyRange<TEntity>(IEnumerable<TEntity> entities)
             where TEntity : class, new();
-        void Modify4Aggregate<TEntity>([NotNull] TEntity entity)
+        void Modify4Aggregate<TEntity>(TEntity entity)
             where TEntity : class, new();
-        void ModifyRange4Aggregate<TEntity>([NotNull] IEnumerable<TEntity> entities)
+        void ModifyRange4Aggregate<TEntity>(IEnumerable<TEntity> entities)
             where TEntity : class, new();
-        void Remove<TEntity>([NotNull] TEntity entity)
+        void Remove<TEntity>(TEntity entity)
             where TEntity : class, new();
-        void RemoveRange<TEntity>([NotNull] IEnumerable<TEntity> entities)
+        void RemoveRange<TEntity>(IEnumerable<TEntity> entities)
             where TEntity : class, new();
         bool Commit();
         Task<int> CommitAsync(CancellationToken cancellationToken = default);

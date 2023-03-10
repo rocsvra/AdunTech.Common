@@ -9,18 +9,19 @@ namespace AdunTech.Redis.Demo.Controllers
     public class TestController : ControllerBase
     {
         private readonly IRedisService _redisService;
-        private readonly ILogger<TestController> _logger;
         private readonly RedisOptions _redisOptions;
 
-        public TestController(ILogger<TestController> logger
-            , IRedisService redisService
+        public TestController(IRedisService redisService
             , IOptions<RedisOptions> redisOptions)
         {
-            _logger = logger;
             _redisService = redisService;
             _redisOptions = redisOptions.Value;
         }
 
+        /// <summary>
+        /// 字符串存储
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public string Get()
         {
@@ -28,6 +29,10 @@ namespace AdunTech.Redis.Demo.Controllers
             return _redisService.Get("name");
         }
 
+        /// <summary>
+        /// 对象存储
+        /// </summary>
+        /// <returns></returns>
         [HttpGet("T")]
         public RedisOptions GetT()
         {

@@ -2,15 +2,18 @@
 using Ardalis.Specification;
 using Ardalis.Specification.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace AdunTech.CommonInfra
 {
-    public class EfRepository<TEntity> : IRepository<TEntity> where TEntity : class
+    public class EfRepository<TEntity> : IRepository<TEntity> 
+        where TEntity : class
     {
         private readonly DbSet<TEntity> _dbSet;
 
@@ -19,10 +22,15 @@ namespace AdunTech.CommonInfra
             _dbSet = dbContext.Set<TEntity>();
         }
 
-        public virtual TEntity Find([NotNull] object id)
+        public virtual TEntity Find(object id)
         {
             var keyValues = new object[] { id };
             return _dbSet.Find(keyValues);
+        }
+
+        public int Count(Expression<Func<TEntity, bool>> predicate)
+        {
+            return _dbSet.Where(predicate).Count();
         }
 
         public int Count(ISpecification<TEntity> spec)
@@ -34,6 +42,11 @@ namespace AdunTech.CommonInfra
         public List<TEntity> All()
         {
             return _dbSet.ToList();
+        }
+
+        public List<TEntity> Query(Expression<Func<TEntity, bool>> predicate)
+        {
+            return _dbSet.Where(predicate).ToList();
         }
 
         public List<TEntity> Query(ISpecification<TEntity> spec)
@@ -49,10 +62,20 @@ namespace AdunTech.CommonInfra
             return specificationResult.Skip(pageIndex * pageSize).Take(pageSize).ToList();
         }
 
+        public TEntity First(Expression<Func<TEntity, bool>> predicate)
+        {
+            return _dbSet.First(predicate);
+        }
+
         public TEntity First(ISpecification<TEntity> spec)
         {
             var specificationResult = ApplySpecification(spec);
             return specificationResult.First();
+        }
+
+        public TEntity FirstOrDefault(Expression<Func<TEntity, bool>> predicate)
+        {
+            return _dbSet.FirstOrDefault(predicate);
         }
 
         public virtual TEntity FirstOrDefault(ISpecification<TEntity> spec)
@@ -69,6 +92,11 @@ namespace AdunTech.CommonInfra
             return await _dbSet.FindAsync(keyValues, cancellationToken);
         }
 
+        public async Task<int> CountAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken cancellationToken = default)
+        {
+            return await _dbSet.Where(predicate).CountAsync(cancellationToken);
+        }
+
         public async Task<int> CountAsync(ISpecification<TEntity> spec, CancellationToken cancellationToken = default)
         {
             var specificationResult = ApplySpecification(spec);
@@ -78,6 +106,11 @@ namespace AdunTech.CommonInfra
         public async Task<List<TEntity>> AllAsync(CancellationToken cancellationToken = default)
         {
             return await _dbSet.ToListAsync(cancellationToken);
+        }
+
+        public Task<List<TEntity>> QueryAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken cancellationToken = default)
+        {
+            return _dbSet.Where(predicate).ToListAsync(cancellationToken);
         }
 
         public async Task<List<TEntity>> QueryAsync(ISpecification<TEntity> spec, CancellationToken cancellationToken = default)
@@ -92,10 +125,20 @@ namespace AdunTech.CommonInfra
             return await specificationResult.Skip(pageIndex * pageSize).Take(pageSize).ToListAsync(cancellationToken);
         }
 
+        public Task<TEntity> FirstAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken cancellationToken = default)
+        {
+            return _dbSet.FirstAsync(predicate, cancellationToken);
+        }
+
         public async Task<TEntity> FirstAsync(ISpecification<TEntity> spec, CancellationToken cancellationToken = default)
         {
             var specificationResult = ApplySpecification(spec);
             return await specificationResult.FirstAsync(cancellationToken);
+        }
+
+        public Task<TEntity> FirstOrDefaultAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken cancellationToken = default)
+        {
+            return _dbSet.FirstOrDefaultAsync(predicate, cancellationToken);
         }
 
         public async Task<TEntity> FirstOrDefaultAsync(ISpecification<TEntity> spec, CancellationToken cancellationToken = default)
@@ -110,6 +153,6 @@ namespace AdunTech.CommonInfra
         {
             var evaluator = new SpecificationEvaluator();
             return evaluator.GetQuery(_dbSet.AsQueryable(), spec);
-        }
+        } 
     }
 }
